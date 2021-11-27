@@ -20,7 +20,7 @@
     ],
     "theme_color": "#FFFFFF",
     "background_color": "#FFFFFF",
-    "start_url": "/shopping-assistant/",
+    "start_url": "/ei-shopping-app/",
     "display": "standalone",
     "orientation": "portrait"
 }
