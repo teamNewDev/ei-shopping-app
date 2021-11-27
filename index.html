@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopping Asst</title>
+
+    <link rel="icon" href="./assets/icon-192.png">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="manifest" href="./manifest.json">
+
+    <script src="./dexie.min.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js');
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <nav>
+      <p>My Shopping Assistant</p>
+    </nav>
+
+    <div class="container" id="container">
+      <form id="itemForm">
+        <label>
+          Name of Item:
+          <input type="text" id="nameInput" required>
+        </label>
+
+        <label>
+          Quantity:
+          <input type="number" id="quantityInput" value=1>
+        </label>
+
+        <label>
+          Price:
+          <input type="number" id="priceInput" value=0>
+        </label>
+
+        <button type="submit" id="addItemButton">Add item</button>
+      </form>
+      <div id="itemUpdateDiv"></div>
+
+      <div id="itemsDiv"></div>
+      <div id="totalPriceDiv"></div>
+      <button id="clearAllButton" onclick="clearAllItems()">
+        Clear all Items
+      </button>
+
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>

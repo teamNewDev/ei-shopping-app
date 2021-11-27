@@ -1,0 +1,179 @@
+* {
+    margin: unset;
+    padding: unset;
+  }
+  
+  body {
+    background: #f2f2f2;
+  }
+  
+  nav {
+    background: #14213d;
+    height: 3rem;
+    line-height: 3rem;
+    color: white;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  #itemForm label {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  #itemForm input {
+    height: 2rem;
+    text-align: center;
+    border: 1px solid #bfbfbf;
+    display: flex;
+    width: 10rem;
+    text-align: start;
+    padding: 0 0.2rem;
+    border-radius: 5px;
+  }
+
+  #updateForm label {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+  
+  #updateForm input {
+    height: 2rem;
+    text-align: center;
+    border: 1px solid #bfbfbf;
+    display: flex;
+    width: 10rem;
+    text-align: start;
+    padding: 0 0.2rem;
+    border-radius: 5px;
+  }
+  
+  /* #quantityInput, #priceInput {
+    width: 3rem;
+  } */
+  
+  #addItemButton {
+    border: unset;
+    background: #14213d;
+    color: #fff;
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 10rem;
+    border-radius: 3px;
+  }
+
+  #editItemButton {
+    border: unset;
+    background: #fca311;
+    color: #000;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 10rem;
+    border-radius: 3px;
+  }
+
+  #clearAllButton {
+    border: unset;
+    background: #db0707;
+    color: #f9f9f9;
+    border-radius: 5px;
+    padding: 1rem 0.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+  #itemsDiv {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .item {
+    max-width: 35rem;
+    min-height: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    background: #e5e5e5;
+    margin-bottom: 0.5rem;
+  }
+  
+  .checkbox {
+    height: 60%;
+    width: 2.5rem;
+  }
+  
+  .itemInfo {
+    text-align: center;
+  }
+
+  .deleteButton {
+    margin: 0 0 0 auto;
+    border: unset;
+    font-size: 0.8rem;
+    width: 2.5rem;
+    cursor: pointer;
+    background: transparent;
+  }
+
+  .deleteButton img{
+    height: 40px;
+    width: 40px;
+  }
+  
+  .deleteButton:active {
+    margin-top: 3px;
+  }
+
+  .editButton{
+    margin: 0 .5rem 0 auto;
+    border: unset;
+    font-size: 0.8rem;
+    width: 2.5rem;
+    height: 100%;
+    cursor: pointer;
+    background: transparent;
+  }
+
+  .editButton img{
+    height: 40px;
+    width: 40px;
+  }
+  
+  .editButton:active {
+    margin-top: 3px;
+  }
+  
+  .purchased {
+    background: #40916c;
+    color: #fff;
+  }
+  
+
+  #totalPriceDiv{
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .editButton, .deleteButton{
+      width: 1.2rem;
+    }
+    .editButton img{
+      width: 30px;
+      height: 30px;
+    }
+    .deleteButton img{
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
