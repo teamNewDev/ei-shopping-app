@@ -7,6 +7,7 @@ const totalPriceDiv = document.getElementById('totalPriceDiv')
 const updateForm = document.getElementById('updateForm')
 
 
+// Items
 const populateItemsDiv = async () => {
   const allItems = await db.items.reverse().toArray()
 
@@ -41,6 +42,7 @@ const populateItemsDiv = async () => {
 
 window.onload = populateItemsDiv
 
+//add item
 itemForm.onsubmit = async (event) => {
   event.preventDefault()
 
@@ -55,7 +57,7 @@ itemForm.onsubmit = async (event) => {
   itemForm.reset()
 }
 
-
+//update Item
 const updateItem = async (event, id) => {
   event.preventDefault()
   const name = document.getElementById('updatednameInput').value
@@ -67,16 +69,19 @@ const updateItem = async (event, id) => {
   window.location.reload()
 } 
 
+//purchased or not
 const toggleItemStatus = async (event, id) => {
   await db.items.update(id, { isPurchased: !!event.target.checked })
   await populateItemsDiv()
 }
 
+//delete item
 const removeItem = async id => {
   await db.items.delete(id)
   await populateItemsDiv()
 }
 
+//update item view
 const populateUpdateForm = async id =>{
   const allItems = await db.items.reverse().toArray()
   const currentItem = allItems.find(i=> i.id===id)
@@ -104,11 +109,13 @@ const populateUpdateForm = async id =>{
     con.innerHTML = content;
 }
 
+//on edit an item
 const editItemTrigger = async id => {
   document.getElementById('itemForm').style.display = "none";
   await populateUpdateForm(id)
 }
 
+//delete all items
 const clearAllItems = () => {
   db.items.clear()
   populateItemsDiv()
