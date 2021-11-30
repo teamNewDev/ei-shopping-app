@@ -20,6 +20,7 @@
     padding: 1rem;
   }
   
+  
   #itemForm label {
     display: block;
     margin-bottom: 1rem;
@@ -56,9 +57,6 @@
     border-radius: 5px;
   }
   
-  /* #quantityInput, #priceInput {
-    width: 3rem;
-  } */
   
   #addItemButton {
     border: unset;
@@ -90,7 +88,18 @@
     padding: 1rem 0.5rem;
     margin-top: 1rem;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
   }
+
+  #clearAllButton img{
+    width: 25px;
+    height: 25px;
+    color: white
+  }
+
   #itemsDiv {
     margin-top: 2rem;
     margin-bottom: 2rem;

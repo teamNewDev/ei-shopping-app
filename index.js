@@ -5,6 +5,20 @@ const itemForm = document.getElementById('itemForm')
 const itemsDiv = document.getElementById('itemsDiv')
 const totalPriceDiv = document.getElementById('totalPriceDiv')
 const updateForm = document.getElementById('updateForm')
+const addItemView = document.getElementById('itemAddDiv')
+const updateItemView = document.getElementById('itemUpdateDiv')
+
+
+//toggle add/update views
+const defaultView = (v) =>{
+  if(v == true){
+    addItemView.style.display="block";
+    updateItemView.style.display="none";
+  }else if(v == false){
+    addItemView.style.display="none";
+    updateItemView.style.display="block";
+  }
+}
 
 
 // Items
@@ -66,7 +80,7 @@ const updateItem = async (event, id) => {
 
   await db.items.update(id, { name, quantity, price })
   await populateItemsDiv()
-  window.location.reload()
+  setTimeout( defaultView(true), 2000)
 } 
 
 //purchased or not
@@ -111,7 +125,7 @@ const populateUpdateForm = async id =>{
 
 //on edit an item
 const editItemTrigger = async id => {
-  document.getElementById('itemForm').style.display = "none";
+  defaultView(false)
   await populateUpdateForm(id)
 }
 
@@ -119,5 +133,5 @@ const editItemTrigger = async id => {
 const clearAllItems = () => {
   db.items.clear()
   populateItemsDiv()
-  window.location.reload()
+  defaultView(true)
 }

@@ -25,6 +25,7 @@
     </nav>
 
     <div class="container" id="container">
+     <div id="itemAddDiv">
       <form id="itemForm">
         <label>
           Name of Item:
@@ -39,16 +40,16 @@
         <label>
           Price:
           <input type="number" id="priceInput" value=0>
-        </label>
+        </label>  
 
         <button type="submit" id="addItemButton">Add item</button>
       </form>
+     </div>
       <div id="itemUpdateDiv"></div>
-
       <div id="itemsDiv"></div>
       <div id="totalPriceDiv"></div>
       <button id="clearAllButton" onclick="clearAllItems()">
-        Clear all Items
+        Clear all Items <img src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/ffffff/external-trash-bin-cleaning-kiranshastry-solid-kiranshastry.png"/>
       </button>
 
     </div>
