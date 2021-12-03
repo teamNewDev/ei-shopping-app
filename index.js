@@ -39,19 +39,19 @@ const populateItemsDiv = async () => {
         <p>$${item.price} x ${item.quantity}</p>
       </div>
      
-      ${!item.isPurchased ? `<div>
+      ${!item.isPurchased ? `<div class="itemChange">
       <button class="editButton" onClick="editItemTrigger(${item.id})"><img src="https://img.icons8.com/color/50/000000/edit--v3.png"/></button>
       <button onclick="removeItem(${item.id})" class="deleteButton">
       <img src="https://img.icons8.com/ios/50/000000/cancel.png"/>
       </button>
-      </div>`: `Purchased ✔`}
+      </div>`: `<p class="itemChange">purchased✔ </p>`}
     </div>
   `).join('')
 
   const arrayOfPrices = allItems.map(item => item.price * item.quantity)
   const totalPrice = arrayOfPrices.reduce((a, b) => a + b, 0)
 
-  totalPriceDiv.innerText = 'Total price: $' + totalPrice
+  totalPriceDiv.innerText = 'Cart Total: $' + totalPrice
 }
 
 window.onload = populateItemsDiv
@@ -93,6 +93,7 @@ const toggleItemStatus = async (event, id) => {
 const removeItem = async id => {
   await db.items.delete(id)
   await populateItemsDiv()
+  defaultView(true)
 }
 
 //update item view
